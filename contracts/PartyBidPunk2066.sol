@@ -12,7 +12,7 @@ contract PartyBidPunk2066 is ERC721URIStorage, Ownable {
   mapping(address => bool) public minted;
 
   constructor(string memory _tokenURI, address _deadAddress)
-    ERC721("DeadPunkPartyBid", "DPPB")
+    ERC721("PartyBid Punk#2066", "PBP#2066")
   {
     tokenCounter = 0;
     internalTokenURI = _tokenURI;
