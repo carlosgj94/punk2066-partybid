@@ -80,15 +80,15 @@ export default function Home() {
     } else if (claiming) {
       return <h5 className={styles.description}>NFT being claimed...</h5>
     } if (claimed) {
-      return <h4 className={[styles.win, styles.tada].join(' ')}>PunkPartyBid claimed!</h4>
+      return <h4 className={[styles.win, styles.tada].join(' ')}>Party Punk#2066 claimed!</h4>
     } else if (account === '') {
       return <button className={styles.btn} onClick={connect} >Connect Wallet </button>
     } else if (chainId !== 4) {
       return <h5 className={styles.description}> Please connect to the Ethereum Network</h5>
     } else if (!hasBalance) {
-      return <h5 className={styles.description}>You must be a Titan holder</h5>
+      return <h5 className={styles.description}>You must have participated in the Punk#2066 PartyBid</h5>
     } else if (hasMinted) {
-      return <h5 className={styles.description}> User has already claimed</h5>
+      return <h5 className={styles.description}>You have already claimed</h5>
     } else {
       return <button className={styles.btn} onClick={claimToken} >Claim NFT</button>
     }
@@ -111,7 +111,7 @@ export default function Home() {
     <div className={styles.container}>
       <Head>
         <title>PunkPartyBid</title>
-        <meta name="description" content="Claim your Punk#2066 NFT and keep your Punk forever." />
+        <meta name="description" content="Participated in the Punk#2066 PartyBid? Claim your party punk!" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -124,7 +124,7 @@ export default function Home() {
           </div>
         </a>
         <h5 className={[styles.description, styles.descriptionSize].join(' ')}>
-          $DEAD holder?, claim your Punk#2066 bid party NFT and keep your punk forever.
+          Participated in the Punk#2066 PartyBid? Claim your party punk!
         </h5>
         {bottomButton()}
       </main>
