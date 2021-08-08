@@ -13,9 +13,7 @@
   color: white;
 }
 
-.imageWrapper div:first-child {
-  width: 50vmin;
-}
+
 
 .description {
   font-size: x-large;
@@ -59,6 +57,16 @@
   animation: shake 0.5s;
   /* When the animation is finished, start again */
   animation-iteration-count: infinite;
+}
+
+.imageWrapper div:first-child {
+  width: 50vmin;
+  border-image-slice:15 15 15 15;
+  border-image-width:20px;
+  border-image-outset:15px;
+  border-image-repeat:round round;
+  border-image-source:url("https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/CSS/CSS_Background_and_Borders/Border-image_generator/border-image-3.png");
+  border-style:solid;
 }
 
 @keyframes shake {

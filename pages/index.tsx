@@ -120,7 +120,7 @@ export default function Home() {
 
         <a href="https://opensea.io/collection/bankrunner-yf94gwllm8" target="_blank" rel="noreferrer">
           <div className={styles.imageWrapper}>
-            <Image src={punkImage} className={styles.logo} alt="logo" />
+            <Image src={punkImage} className={styles.hearts} alt="logo" />
           </div>
         </a>
         <h5 className={[styles.description, styles.descriptionSize].join(' ')}>
