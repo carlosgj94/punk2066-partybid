@@ -87,7 +87,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>PunkPartyBid</title>
+        <title>PartyBid Punk#2066</title>
         <meta name="description" content="Participated in the Punk#2066 PartyBid? Claim your party punk!" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
