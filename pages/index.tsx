@@ -95,7 +95,7 @@ export default function Home() {
       <main className={styles.header}>
         <h1 className={styles.title}>PartyBid Punk#2066</h1>
 
-        <a href="https://opensea.io/collection/bankrunner-yf94gwllm8" target="_blank" rel="noreferrer">
+        <a href="https://opensea.io/collection/partybid-punk2066" target="_blank" rel="noreferrer">
           <div className={styles.imageWrapper}>
             <Image src={punkImage} className={styles.hearts} alt="logo" />
           </div>
