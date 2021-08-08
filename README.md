@@ -1,5 +1,6 @@
 # Important Data
 NFT Metadata IPFS: QmUAhBXfEo7LD5RHXzshqeVeqPGf9De2womrswDgDEJtmi (hosted by Pinata)
+
 NFT Image: QmcFQ72MeWAcVZgcd73NcbyJKNx3i8a321uZQtf8bwJwRS (hosted by Pinata)
 
 ---
