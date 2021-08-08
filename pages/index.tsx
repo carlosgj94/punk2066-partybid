@@ -26,7 +26,6 @@ export default function Home() {
   let [hasMinted, setHasMinted] = useState(true);
   let [claimed, setClaimed] = useState(false);
   let [claiming, setClaiming] = useState(false);
-  let [mintFinished, setMintFinished] = useState(false);
 
   let web3Modal: any
   if (process.browser) {
@@ -39,7 +38,7 @@ export default function Home() {
 
   const claimToken = async () => {
     setClaiming(true);
-    let Contract = new web3.eth.Contract(PartyBidPunk2066.abi, '0x6A10944D1424902da15f2AE083aC1Cdc005d2bF3');
+    let Contract = new web3.eth.Contract(PartyBidPunk2066.abi, '0x1003fCbA76b07bb978B79a71D11e957DCdD54EBD');
     await Contract.methods.mintCollectible().send({ from: account });
     setClaiming(false);
     setClaimed(true);
@@ -53,7 +52,7 @@ export default function Home() {
         let web3: any = new Web3(provider);
         let chain = await web3.eth.getChainId();
 
-        let Contract = new web3.eth.Contract(PartyBidPunk2066.abi, '0x6A10944D1424902da15f2AE083aC1Cdc005d2bF3');
+        let Contract = new web3.eth.Contract(PartyBidPunk2066.abi, '0x1003fCbA76b07bb978B79a71D11e957DCdD54EBD');
         let accounts = await web3.eth.getAccounts()
         let balance = await Contract.methods.hasBalance().call({ from: accounts[0] })
         let minted = await Contract.methods.minted(accounts[0]).call({ from: accounts[0] })
@@ -68,22 +67,13 @@ export default function Home() {
     }
   }
   const bottomButton = () => {
-    if (mintFinished) {
-      return (<h5 className={styles.description}>
-        All 1000 rugs have been claimed, 
-        <a
-          className={styles.opensea}
-          href="https://opensea.io/assets/bankrunner-yf94gwllm8?search[resultModel]=ASSETS&search[sortAscending]=false&search[sortBy]=BIRTH_DATE&search[toggles][0]=BUY_NOW">Go to OpenSea to get one.
-        </a>
-        </h5>
-      )
-    } else if (claiming) {
+    if (claiming) {
       return <h5 className={styles.description}>NFT being claimed...</h5>
     } if (claimed) {
       return <h4 className={[styles.win, styles.tada].join(' ')}>Party Punk#2066 claimed!</h4>
     } else if (account === '') {
       return <button className={styles.btn} onClick={connect} >Connect Wallet </button>
-    } else if (chainId !== 4) {
+    } else if (chainId !== 1) {
       return <h5 className={styles.description}> Please connect to the Ethereum Network</h5>
     } else if (!hasBalance) {
       return <h5 className={styles.description}>You must have participated in the Punk#2066 PartyBid</h5>
@@ -94,19 +84,6 @@ export default function Home() {
     }
   }
 
-  useEffect(() => {
-    let mintStatus = async () => {
-      let web3: any = new Web3(`https://rinkeby.infura.io/v3/${process.env.NEXT_PUBLIC_INFURA}`);
-
-      let Contract = new web3.eth.Contract(PartyBidPunk2066.abi, '0x6A10944D1424902da15f2AE083aC1Cdc005d2bF3');
-      let totalMinted = await Contract.methods.tokenCounter().call()
-      if (totalMinted > 999) setMintFinished(true);
-    }
-
-    mintStatus();
-  }, []);
-
-
   return (
     <div className={styles.container}>
       <Head>
@@ -116,7 +93,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.header}>
-        <h1 className={styles.title}>PunkBidder</h1>
+        <h1 className={styles.title}>PartyBid Punk#2066</h1>
 
         <a href="https://opensea.io/collection/bankrunner-yf94gwllm8" target="_blank" rel="noreferrer">
           <div className={styles.imageWrapper}>
